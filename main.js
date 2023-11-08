@@ -63,8 +63,13 @@ function difficoltaLivello() {
 }
 
 function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 10)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-
+const listaBombe = []
+for (let i = 0; i < 16; i++) {
+    
+    const numeroCasuale = getRndInteger(1, 100)
+    listaBombe[i] = getRndInteger(1, 100)
+    
+}
