@@ -5,19 +5,41 @@ btn.addEventListener("click", function(){
     
 })
 
-    
 function grigliaGen(){
-    
-    let numeroCelle = 100
+
+
+    const select = difficoltaLivello();
     let grid = document.getElementById("griglia")
+    grid.innerHTML = "";
+    let numeroCelleTotali;
+    let numCellePerRiga;
     
-    for (let i = 1; i <= numeroCelle; i++) {
+    if (select==1) {
+        
+        numeroCelleTotali = 49;
+        numCellePerRiga = 7;
+    } else if (select==2){
+        
+        numeroCelleTotali = 81;
+        numCellePerRiga = 9;
+
+    } else if (select==3){
+        
+        numeroCelleTotali = 100;
+        
+    }
+    
+    for (let i = 1; i <= numeroCelleTotali; i++) {
+
+
         let nCelle = i + 0;
         const cella = document.createElement("div");
         cella.classList.add("square");
         cella.classList.add("spazio")
         grid.appendChild(cella);
         cella.innerHTML = nCelle
+        cella.style.width = `calc(100% / ${numCellePerRiga})`;
+        cella.style.height = `calc(100% / ${numCellePerRiga})`;
 
         
 
@@ -27,14 +49,22 @@ function grigliaGen(){
     
         cella.classList.toggle("colorata")
     
-        
-
-
         });
     
     }
-
+    
 }    
+
+function difficoltaLivello() {
+    
+    const select = parseInt(document.getElementById("select").value);
+    console.log (select);
+    return select;
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 10)) + min;
+}
 
 
 

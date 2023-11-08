@@ -35,10 +35,21 @@ body{
     padding: 15px;
     margin-top: 40px;
     margin-bottom: 40px;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
 
 }
 .spazio{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+h1{
+    margin: 0 auto;
+    text-align: center;
+}
+.main{
+    text-align: center;
+    padding-top: 10px;
 }
