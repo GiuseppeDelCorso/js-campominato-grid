@@ -61,7 +61,8 @@ function grigliaGen(){
         cella.classList.toggle("colorata")
              
         
-        if (nCelle==listaBombe) {
+        if (nCelle==listaBombe) 
+        {
                  console.log("Bomba")
              }
     
