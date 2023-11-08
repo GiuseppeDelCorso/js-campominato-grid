@@ -1,3 +1,16 @@
+/***imposto la difficoltaa
+clicclo sul bottone
+creo una funzione che generi la grigliaGen
+in base al livello genro le diverse quantita di Caselle 
+inposto un evento che mi aggiunga la classe per colorare la casella clicclata
+creao un generatore di numeri randomico da 1 a 16
+confronmto questi numeri randomici con quelli presentri nella grigliaGen
+inposto un evento che mi colori la casella di rosso nel caso in cuoi i numeri siano li Stessi 
+nel caso in cui i numeri combacino la partita riultrà persa**/
+
+
+
+
 
 let btn = document.getElementById("bottone")
 btn.addEventListener("click", function(){
@@ -44,14 +57,18 @@ function grigliaGen(){
         
 
         cella.addEventListener("click", function(){
-    
         console.log("cliccata", nCelle)
-    
         cella.classList.toggle("colorata")
+             
+        
+        if (nCelle==listaBombe) {
+                 console.log("Bomba")
+             }
+    
     
         });
-    
     }
+    
     
 }    
 
@@ -71,5 +88,7 @@ for (let i = 0; i < 16; i++) {
     
     const numeroCasuale = getRndInteger(1, 100)
     listaBombe[i] = getRndInteger(1, 100)
+    console.log(listaBombe)
     
 }
+
